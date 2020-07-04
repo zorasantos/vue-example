@@ -1,7 +1,7 @@
 {
   "name": "zorasantos.github.io",
   "version": "0.1.0",
-  "homepage": "https://zorasantos.github.io/zorasantos.github.io",
+  "homepage": "https://zorasantos.github.io/vue-exemple",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
