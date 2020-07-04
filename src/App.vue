@@ -1,18 +1,25 @@
 <template>
   <v-app>
-    <v-main>
+    <TopBar />
+    <v-main class="main">
       <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-
+const TopBar = () => import('../src/components/TopBar/TopBar')
 export default {
   name: 'App',
+  components: { TopBar },
 
   data: () => ({
     //
   }),
 };
 </script>
+<style scoped>
+  .main {
+  background-color: #004D40;
+  }
+</style>
