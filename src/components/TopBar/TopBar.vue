@@ -3,12 +3,13 @@
     <v-app-bar
       color="#004D40"
       dark
+      app
     >
       <router-link to="/">
         <v-img
           alt="logo"
           title="logo site"
-          class="logo ml-12 mr-4"
+          class="logo ml-9 mr-4"
           src="../../assets/logo.png"
         />
       </router-link>
