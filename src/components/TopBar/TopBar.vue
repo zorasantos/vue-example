@@ -24,7 +24,7 @@
         app
         right
       >
-        <v-list>
+        <!-- <v-list>
           <v-list-item
             v-for="(link, index) in links"
             :key="index"
@@ -37,28 +37,43 @@
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-        </v-list>
+        </v-list> -->
       </v-navigation-drawer>
       <v-app-bar-nav-icon
         class="hidden-sm-and-up icon-bar"
         @click.stop="sideNav = !sideNav"
       />
-      <v-col
-        style="text-align: right;"
-        class="mr-12 ml-5"
-        sm="6"
-      >
+      <v-col class="mr-12 ml-5" sm="6">
         <v-row justify="end">
-          <v-btn
-            v-for="(link, index) in links"
-            :key="index"
-            text
-            class="ml-2 hidden-xs-only"
-            :to="link.url"
-            :color="link.color"
-            right
-          >
-            {{ link.title }}
+          <v-btn text dark class="ml-2 hidden-xs-only" to='/'>
+            Home
+          </v-btn>
+
+          <v-menu bottom open-on-hover :offset-y="offset" :close-on-content-click="closeOnContentClick">
+            <template v-slot:activator="{ on }">
+              <v-btn text dark v-on="on" :prepend-icon="closeOnContentClick" class="ml-2 hidden-xs-only">
+                Ui
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item class="dropdown-opacity" to="/alerts">
+                <v-list-item-title>
+                    ALERTS
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item class="dropdown-opacity" to="/modals">
+                <v-list-item-title>
+                    MODALS
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item class="dropdown-opacity" to="/inputs">
+                <v-list-item-title >INPUTS</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+
+          <v-btn text dark class="ml-2 hidden-xs-only" to='/artigos'>
+            Artigos
           </v-btn>
         </v-row>
       </v-col>
@@ -71,20 +86,9 @@ export default {
   data: () => ({
     offset: true,
     sideNav: false,
-    links: [
-      {
-        title: 'HOME',
-        url: '/',
-      },
-      {
-        title: 'UI',
-        url: '/',
-      },
-      {
-        title: 'ARTIGOS',
-        url: '/',
-      }
-    ]
+    collapseOnScroll: true,
+    closeOnClick: true,
+    closeOnContentClick: true,
   })
 }
 </script>

@@ -1,12 +1,24 @@
 <template>
   <v-container class="home">
-    <button
-      type="button"
-      class="btn"
-      @click="showModal"
-    >
-      Abrir Modal
-    </button>
+    <v-card>
+      <v-col>
+        <v-row justify="center" class="pa-2">
+          <Alert class="mb-3" text="Eu sou um alerta de sucesso!" type="success" />
+          <Alert class="mb-3" text="Eu sou um alerta de informação!" type="info" />
+          <Alert class="mb-3" text="Eu sou um alerta de warning!" type="warning" />
+          <Alert text="Eu sou um alerta de error!" type="error" />
+        </v-row>
+      </v-col>
+    </v-card>
+    <v-row justify="center" class="mb-5 mt-12">
+      <button
+        type="button"
+        class="btn"
+        @click="showModal"
+      >
+        Abrir Modal
+      </button>
+    </v-row>
     <Dialog
       v-show="modalVisible"
       @close="closeModal"
@@ -24,9 +36,10 @@
 
 <script>
 const Dialog = () => import('../components/PageTitleDialog/Dialog')
+const Alert = () => import('../components/Alert/Alert')
 export default {
   name: 'Home',
-  components: { Dialog },
+  components: { Dialog, Alert },
   data () {
     return {
       modalVisible: false,
