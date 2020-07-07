@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  name: 'ModalComponents',
   props: {
     title: {
       type: String,
@@ -52,12 +53,12 @@ export default {
 
 <style scoped>
   .modal-container {
-    position: fixed;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +70,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 500px;
+    border: 1px #39A576 solid;
     border-radius: 3px;
   }
 
@@ -94,13 +96,13 @@ export default {
     margin-left: 6px;
   }
   .btn-close {
-    color: #4DB6AC;
-    background: #E0F2F1;
+    color: #FFF;
+    background: #39A576;
     padding: 5px 20px;
     border-radius: 3px;
   }
   .btn-close:hover {
-    background-color: #4DB6AC;
+    background-color: #52b88c;
     color: white;
   }
 
