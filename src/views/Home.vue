@@ -1,17 +1,15 @@
 <template>
-  <v-container class="home">
-    
-
+  <v-container>
+    <CardList />
   </v-container>
 </template>
 
 <script>
+const CardList = () => import('../components/Home/CardList')
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: { CardList }
 }
 </script>
 <style scoped>
-  .home {
-    color: white;
-  }
 </style>
