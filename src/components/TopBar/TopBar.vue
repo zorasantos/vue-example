@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app-bar
-      color="#004D40"
+      color="#435B71"
       dark
       app
     >
@@ -9,11 +9,11 @@
         <v-img
           alt="logo"
           title="logo site"
-          class="logo ml-9 mr-4"
+          class="logo mt-1"
           src="../../assets/logo.png"
         />
       </router-link>
-      <h3>Vue Exemplos</h3>
+      <h3 class="ml-5">Vue Exemplos</h3>
 
       <v-spacer></v-spacer>
 
@@ -24,20 +24,7 @@
         app
         right
       >
-        <!-- <v-list>
-          <v-list-item
-            v-for="(link, index) in links"
-            :key="index"
-          >
-            <v-list-item-content>
-              <v-list-item-title class="mb-5 ml-2">
-                <router-link :to="link.url">
-                  {{ link.title }}
-                </router-link>
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list> -->
+
       </v-navigation-drawer>
       <v-app-bar-nav-icon
         class="hidden-sm-and-up icon-bar"
@@ -96,6 +83,6 @@ export default {
 <style scoped>
   .logo {
     width: 40px;
-    border: white;
+    margin-left: 40px;
   }
 </style>

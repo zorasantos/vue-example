@@ -1,5 +1,5 @@
 <template>
-  <div class="alert" v-bind:style="{ 'background-color': alerts[type].color, 'color': '#FFF' }">
+  <div class="alert" :style="{ backgroundColor: alerts[type].color, color: '#FFF' }">
     <div class="alert-items">
       <img :src="alerts[type].icon" />
       <span>{{ text }}</span>
@@ -26,7 +26,7 @@ export default {
           color: '#FF5252'
         },
         info: {
-          icon: require('../../assets/notification.svg'),
+          icon: require('../../assets/info.svg'),
           color: '#2196F3'
         }
       }
@@ -41,7 +41,6 @@ export default {
     display: flex;
     align-items: center;
     min-height: 50px;
-    color: grey;
     width: 800px;
     border-radius: 5px;
   }
