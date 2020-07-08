@@ -3,6 +3,7 @@
     <v-row>
       <v-col>
         <v-card class="modal-container">
+          <CodeBtn @showCode="isVisibleCode = !isVisibleCode" />
           <v-card-actions>
             <v-row justify="center">
               <v-btn v-if="modalVisible === false" class="btn" @click="showModal">Abrir Modal</v-btn>
@@ -19,23 +20,28 @@
     </v-row>
 
     <iframe
-     src="https://codesandbox.io/embed/default-modal-component-vuejs-q42ye?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="Default Modal Component Vue.Js"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+      v-if="isVisibleCode"
+      src="https://codesandbox.io/embed/default-modal-component-vuejs-q42ye?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Default Modal Component Vue.Js"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     ></iframe>
   </v-container>
 </template>
 
 <script>
 const Modal = () => import('./Modal')
+const CodeBtn = () => import('../Shared/CodeBtn')
+
 export default {
   name: 'ModalDefault',
-  components: { Modal },
+  components: { Modal, CodeBtn },
+  props: ['changeButton'],
   data () {
     return {
       modalVisible: true,
+      isVisibleCode: false
     }
   },
   methods: {
@@ -59,7 +65,7 @@ export default {
     color: white !important;
   }
   .modal-container {
-    padding: 10px;
+    padding: 8px;
     min-height: 250px;
   }
 </style>

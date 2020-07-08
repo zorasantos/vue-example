@@ -1,17 +1,29 @@
 <template>
   <v-container>
-    <v-card class="mb-12">
-        <v-col>
-          <v-row justify="center" class="pa-2">
-            <Alert class="mb-3" text="Eu sou um alerta de sucesso!" type="success" />
-            <Alert class="mb-3" text="Eu sou um alerta de informação!" type="info" />
-            <Alert class="mb-3" text="Eu sou um alerta de warning!" type="warning" />
-            <Alert text="Eu sou um alerta de error!" type="error" />
-          </v-row>
-        </v-col>
-      </v-card>
+    <v-card class="mb-5">
+      <v-col>
+        <v-row justify="end" class="mr-2">
+          <v-card-actions>
+            <v-btn
+              class="btn-code"
+              small
+              @click="isVisibleCode = !isVisibleCode"
+            >
+              Ver código
+            </v-btn>
+          </v-card-actions>
+        </v-row>
+        <v-row justify="center" class="pa-2">
+          <Alert class="mb-3" text="Eu sou um alerta de sucesso!" type="success" />
+          <Alert class="mb-3" text="Eu sou um alerta de informação!" type="info" />
+          <Alert class="mb-3" text="Eu sou um alerta de warning!" type="warning" />
+          <Alert text="Eu sou um alerta de error!" type="error" />
+        </v-row>
+      </v-col>
+    </v-card>
 
-      <iframe
+    <iframe
+      v-if="isVisibleCode"
       src="https://codesandbox.io/embed/dynamic-alert-component-vuejs-vlbhr?fontsize=14&hidenavigation=1&theme=dark"
       style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
       title="Dynamic Alert Component Vue.Js"
@@ -24,10 +36,18 @@
 <script>
 const Alert = () => import('./Alert')
 export default {
-  components: { Alert }
+  components: { Alert },
+  data: () => {
+    return {
+      isVisibleCode: false
+    }
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .btn-code {
+    background-color: #435B71 !important;
+    color: #FFF !important;
+  }
 </style>
