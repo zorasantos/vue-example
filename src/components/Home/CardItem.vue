@@ -9,11 +9,20 @@
     >
 
       <v-card-text>
-        <span class="card-tag font-weight-light text-uppercase">{{ item.tag }}</span>
-        <p class="mt-2 mb-5">
-          <router-link v-if="!item.link" class="card-title text-uppercase font-weight-medium" :to="item.url" > {{ item.title }} </router-link>
-          <a v-else :href="item.url" target="_blank" class="card-title text-uppercase font-weight-medium"> {{ item.title }} </a>
-        </p>
+        <v-row justify="center">
+          <span class="card-tag font-weight-light text-uppercase">{{ item.tag }}</span>
+        </v-row>
+        <v-row justify="center">
+          <p class="mt-2 mb-5">
+            <router-link v-if="!item.link" class="card-title text-uppercase font-weight-medium" :to="item.url" > {{ item.title }} </router-link>
+            <a v-else :href="item.url" target="_blank" class="card-title text-uppercase font-weight-medium"> {{ item.title }} </a>
+          </p>
+        </v-row>
+        <v-row justify="center">
+          <v-btn :to="item.url" class="btn-card" rounded>
+            {{ item.button }}
+          </v-btn>
+        </v-row>
       </v-card-text>
     </v-card>
   </v-col>
@@ -43,9 +52,15 @@ export default {
   .card-item {
     height: 360px;
     border-bottom: 16px solid #fff;
-    border-radius: 20px;
+    border-radius: 40px;
     transition: top ease .5s;
     top: 0;
+  }
+  .btn-card {
+    margin-top: 140px;
+    background-color: #39A576 !important;
+    color: #FFF;
+    width: 150px;
   }
   .card-tag {
     font-size: 14px;

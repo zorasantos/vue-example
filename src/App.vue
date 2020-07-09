@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="app-style">
     <TopBar />
     <v-main class="main">
       <router-view />
@@ -18,7 +18,7 @@ export default {
   }),
 };
 </script>
-<style scoped>
+<style>
   .main {
     background-color: #ecebeb;
   }

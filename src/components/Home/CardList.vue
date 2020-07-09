@@ -24,27 +24,30 @@ export default {
       cards: [
         {
           title: 'Alerts Components',
+          button: 'Alerts',
           tag: 'Vue Exemple',
           url: '/alert',
           link: false
-
         },
         {
           title: 'Modals Components',
+          button: 'Modals',
           tag: 'Vue Exemple',
           url: '/modal',
           link: false
         },
         {
           title: 'No Content',
+          button: 'No Content',
           tag: 'Vue Exemple',
-          url: '/',
+          url: '/input',
           link: false
         },
         {
           title: 'No Content',
+          button: 'No Content',
           tag: 'Vue Exemple',
-          url: '/',
+          url: '/table',
           link: false
         }
       ]
