@@ -1,16 +1,30 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-card class="spinner-card">
-        <v-row justify="center">
-          <Spinner class="mr-3" color="default" />
-          <Spinner class="mr-3" color="green" />
-          <Spinner class="mr-3" color="red" />
-          <Spinner class="mr-3" color="purple" />
-          <Spinner class="mr-3" color="deep-purple" />
-          <Spinner class="mr-3" color="yellow" />
-        </v-row>
-      </v-card>
+      <v-col cols="12">
+        <v-card class="spinner-card">
+          <v-row justify="center" class="mb-12">
+            <Spinner class="mr-3" width="35px" height="35px" />
+            <Spinner class="mr-3" color="green" />
+            <Spinner class="mr-3" color="red" />
+            <Spinner class="mr-3" color="purple" />
+            <Spinner class="mr-3" color="#673AB7" />
+            <Spinner class="mr-3" color="#E91E63" width="35px" height="35px" />
+          </v-row>
+
+          <v-row>
+            <button :style="spinnerButton" class="button-spinner" @click="isSpinner = !isSpinner">
+              <Spinner v-if="isSpinner == true" color="purple" width="22px" height="22px" />
+              <span v-else>Button</span>
+            </button>
+
+            <button :style="spinnerButtonTwo" style="background-color: #E91E63" class="button-spinner" @click="buttonTwo = !buttonTwo">
+              <Spinner v-if="buttonTwo == true" color="purple" width="22px" height="22px" />
+              <span>Button</span>
+            </button>
+          </v-row>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -19,13 +33,45 @@
 const Spinner = () => import('../components/Spinner/Spinner')
 export default {
   name: 'SpinnerView',
-  components: { Spinner }
+  components: { Spinner },
+  data: () => {
+    return {
+      isSpinner: false,
+      buttonTwo: false
+    }
+  },
+  computed: {
+    spinnerButton() {
+      return this.isSpinner == true ? { 'background-color': '#FAFAFA',  border: '1px solid grey' } : ''
+    },
+    spinnerButtonTwo() {
+      return this.buttonTwo == true ? { 'background-color': '#FAFAFA', fontSize: '15px', color: '#435B71',  border: '1px solid grey' } : ''
+    }
+  }
 }
 </script>
 
 <style scoped>
   .spinner-card {
-    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
     padding: 100px;
+  }
+  .button-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    background-color: #4CAF50;
+    color: #FFF;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    outline: none;
+  }
+  :hover.button-spinner {
+    background-color: #6fb171;
   }
 </style>

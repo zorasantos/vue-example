@@ -1,5 +1,12 @@
 <template>
-  <div class="spinner" :style="{ 'border-top': `3px solid ${spinners[color].color}`, 'border-left': `3px solid ${spinners[color].color}` }"></div>
+  <div
+    class="spinner"
+    :style="{
+      'border-top': `2px solid ${this.spinners.color = color }`,
+      'border-left': `2px solid ${this.spinners.color = color }`,
+      width: this.spinners.width = width,
+      height: this.spinners.height = height,
+    }" />
 </template>
 
 <script>
@@ -7,37 +14,27 @@ export default {
   data () {
     return {
       spinners: {
-        default: {
-          color: '#435B71'
-        },
-        red: {
-          color: '#F44336'
-        },
-        green: {
-          color: '#4CAF50'
-        },
-        purple: {
-          color: '#9C27B0'
-        },
-        'deep-purple': {
-          color: '#673AB7'
-        },
-        yellow: {
-          color: '#FFEB3B'
-        }
+        color: '',
+        width: '',
+        height: ''
       }
     }
   },
-  props: ['color']
+  props: {
+    color: { type: String },
+    width: { type: String || Number },
+    height: { type: String || Number } }
 }
 </script>
 
 <style scoped>
   .spinner {
-    border: 3px solid #FFF;
+    border: 2px solid #FFF;
+    border-top: 2px solid #435B71;
+    border-left: 2px solid #435B71;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     animation: spin 1s linear infinite;
   }
 
