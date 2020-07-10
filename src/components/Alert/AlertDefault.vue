@@ -14,10 +14,10 @@
           </v-card-actions>
         </v-row>
         <v-row justify="center" class="pa-2">
-          <Alert class="mb-3" text="Eu sou um alerta de sucesso!" type="success" />
-          <Alert class="mb-3" text="Eu sou um alerta de informação!" type="info" />
-          <Alert class="mb-3" text="Eu sou um alerta de warning!" type="warning" />
-          <Alert text="Eu sou um alerta de error!" type="error" />
+          <z-alert class="mb-3" text="Eu sou um alerta de sucesso!" type="success" />
+          <z-alert class="mb-3" text="Eu sou um alerta de informação!" type="info" />
+          <z-alert class="mb-3" text="Eu sou um alerta de warning!" type="warning" />
+          <z-alert text="Eu sou um alerta de error!" type="error" />
         </v-row>
       </v-col>
     </v-card>
@@ -36,7 +36,7 @@
 <script>
 const Alert = () => import('./Alert')
 export default {
-  components: { Alert },
+  components: { 'z-alert': Alert },
   data: () => {
     return {
       isVisibleCode: false

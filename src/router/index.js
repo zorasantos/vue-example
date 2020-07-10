@@ -23,6 +23,11 @@ Vue.use(VueRouter)
     path: '/spinner',
     name: 'Spinner',
     component: () => import('../views/Spinner.vue')
+  },
+  {
+    path: '/button',
+    name: 'Button',
+    component: () => import('../views/Button.vue')
   }
 ]
 
