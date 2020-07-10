@@ -37,10 +37,10 @@ export default {
           link: false
         },
         {
-          title: 'No Content',
-          button: 'No Content',
+          title: 'Spiners Components',
+          button: 'Spinner',
           tag: 'Vue Exemple',
-          url: '/input',
+          url: '/spinner',
           link: false
         },
         {

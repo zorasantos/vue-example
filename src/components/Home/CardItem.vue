@@ -52,7 +52,7 @@ export default {
   .card-item {
     height: 360px;
     border-bottom: 16px solid #fff;
-    border-radius: 40px;
+    border-radius: 20px !important;
     transition: top ease .5s;
     top: 0;
   }

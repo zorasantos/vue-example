@@ -18,6 +18,11 @@ Vue.use(VueRouter)
     path: '/modal',
     name: 'Modal',
     component: () => import('../views/Modal.vue')
+  },
+  {
+    path: '/spinner',
+    name: 'Spinner',
+    component: () => import('../views/Spinner.vue')
   }
 ]
 
