@@ -9,11 +9,13 @@
         <v-img
           alt="logo"
           title="logo site"
-          class="logo mt-1"
+          class="logo"
           src="../../assets/logo.png"
         />
       </router-link>
-      <h3 class="ml-5">Vue Tutorials</h3>
+      <v-col cols="9" md="3" sm="3">
+        <h3>Vue Code Example</h3>
+      </v-col>
 
       <v-spacer></v-spacer>
 
@@ -24,10 +26,40 @@
         app
         right
       >
+        <v-btn text dark class="ml-9" to='/'>
+          Home
+        </v-btn>
 
+        <v-row>
+          <v-menu bottom :offset-y="offset" :close-on-content-click="closeOnContentClick">
+            <template v-slot:activator="{ on }">
+              <v-btn text dark v-on="on" :prepend-icon="closeOnContentClick" class="ml-12 mt-4 mb-4">
+                Ui
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item class="dropdown-opacity" to="/alerts">
+                <v-list-item-title>
+                    ALERTS
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item class="dropdown-opacity" to="/modals">
+                <v-list-item-title>
+                    MODALS
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item class="dropdown-opacity" to="/inputs">
+                <v-list-item-title >INPUTS</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-row>
+        <v-btn text dark class="ml-9" to='/artigos'>
+          Artigos
+        </v-btn>
       </v-navigation-drawer>
       <v-app-bar-nav-icon
-        class="hidden-sm-and-up icon-bar"
+        class="hidden-sm-and-up icon-bar style-icon"
         @click.stop="sideNav = !sideNav"
       />
       <v-col class="mr-12 ml-5" sm="6">
@@ -84,5 +116,14 @@ export default {
   .logo {
     width: 40px;
     margin-left: 40px;
+  }
+  @media (max-width: 425px) {
+    .logo {
+      margin-left: 5px;
+      width: 35px;
+    }
+    .style-icon {
+      margin-right: 50px;
+    }
   }
 </style>

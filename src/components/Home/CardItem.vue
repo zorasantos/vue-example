@@ -7,7 +7,6 @@
       :class="{ hover: cardHovering }"
       min-width="100%"
     >
-
       <v-card-text>
         <v-row justify="center">
           <span class="card-tag font-weight-light text-uppercase">{{ item.tag }}</span>
@@ -17,6 +16,11 @@
             <router-link v-if="!item.link" class="card-title text-uppercase font-weight-medium" :to="item.url" > {{ item.title }} </router-link>
             <a v-else :href="item.url" target="_blank" class="card-title text-uppercase font-weight-medium"> {{ item.title }} </a>
           </p>
+        </v-row>
+        <v-row justify="center" v-if="item.spinner" class="mt-12">
+          <z-spinner />
+          <z-spinner color="purple" />
+          <z-spinner color="green" />
         </v-row>
         <v-row justify="center">
           <v-btn :to="item.url" class="btn-card" rounded>
@@ -29,7 +33,9 @@
 </template>
 
 <script>
+const Spinner = () => import('../Spinner/Spinner')
 export default {
+  components: { 'z-spinner': Spinner },
   data() {
     return {
       cardHovering:false
@@ -40,6 +46,9 @@ export default {
 </script>
 
 <style scoped>
+  .alert-container {
+    height: 50px;
+  }
   .card-link {
     text-decoration: none;
     font-size: 14px;
@@ -57,7 +66,7 @@ export default {
     top: 0;
   }
   .btn-card {
-    margin-top: 140px;
+    margin-top: 80px;
     background-color: #39A576 !important;
     color: #FFF;
     width: 150px;
