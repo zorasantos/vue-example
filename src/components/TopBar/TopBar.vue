@@ -13,7 +13,7 @@
           src="../../assets/logo.png"
         />
       </router-link>
-      <h3 class="ml-5">Vue Exemplos</h3>
+      <h3 class="ml-5">Vue Tutorials</h3>
 
       <v-spacer></v-spacer>
 

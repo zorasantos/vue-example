@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-row justify="center" align="center">
-      <span class="title-vue mr-5">Vue.Js</span>
-      <span class="title mb-12 mt-12">Exemple</span>
+      <span class="title-vue mr-3">Vue.Js</span>
+      <span class="title mb-12 mt-12">Tutorials</span>
     </v-row>
     <v-row>
       <v-col>
@@ -25,28 +25,28 @@ export default {
         {
           title: 'Alerts Components',
           button: 'Alerts',
-          tag: 'Vue Exemple',
+          tag: 'Vue Tutorials',
           url: '/alert',
           link: false
         },
         {
           title: 'Modals Components',
           button: 'Modals',
-          tag: 'Vue Exemple',
+          tag: 'Vue Tutorials',
           url: '/modal',
           link: false
         },
         {
           title: 'Spiners Components',
           button: 'Spinner',
-          tag: 'Vue Exemple',
+          tag: 'Vue Tutorials',
           url: '/spinner',
           link: false
         },
         {
           title: 'No Content',
           button: 'No Content',
-          tag: 'Vue Exemple',
+          tag: 'Vue Tutorials',
           url: '/table',
           link: false
         }
