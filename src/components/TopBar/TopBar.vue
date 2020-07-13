@@ -38,18 +38,18 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item class="dropdown-opacity" to="/alerts">
+              <v-list-item class="dropdown-opacity" to="/alert">
                 <v-list-item-title>
                     ALERTS
                 </v-list-item-title>
               </v-list-item>
-              <v-list-item class="dropdown-opacity" to="/modals">
+              <v-list-item class="dropdown-opacity" to="/modal">
                 <v-list-item-title>
                     MODALS
                 </v-list-item-title>
               </v-list-item>
-              <v-list-item class="dropdown-opacity" to="/inputs">
-                <v-list-item-title >INPUTS</v-list-item-title>
+              <v-list-item class="dropdown-opacity" to="/spinner">
+                <v-list-item-title >Spinners</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -75,18 +75,18 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item class="dropdown-opacity" to="/alerts">
+              <v-list-item class="dropdown-opacity" to="/alert">
                 <v-list-item-title>
                     ALERTS
                 </v-list-item-title>
               </v-list-item>
-              <v-list-item class="dropdown-opacity" to="/modals">
+              <v-list-item class="dropdown-opacity" to="/modal">
                 <v-list-item-title>
                     MODALS
                 </v-list-item-title>
               </v-list-item>
-              <v-list-item class="dropdown-opacity" to="/inputs">
-                <v-list-item-title >INPUTS</v-list-item-title>
+              <v-list-item class="dropdown-opacity" to="/spinner">
+                <v-list-item-title >SPINNERS</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>

@@ -28,6 +28,11 @@ Vue.use(VueRouter)
     path: '/button',
     name: 'Button',
     component: () => import('../views/Button.vue')
+  },
+  {
+    path: '/chip',
+    name: 'Chip',
+    component: () => import('../views/Chip.vue')
   }
 ]
 
