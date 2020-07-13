@@ -23,7 +23,7 @@
       v-if="isVisibleCode"
       src="https://codesandbox.io/embed/default-modal-component-vuejs-q42ye?fontsize=14&hidenavigation=1&theme=dark"
       style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-      title="Default Modal Component Vue.Js"
+      title="Modal Component Vue.Js"
       allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
       sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     ></iframe>

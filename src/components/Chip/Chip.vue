@@ -21,10 +21,6 @@ export default {
     },
     text: {
       type: String,
-    },
-    outlined: {
-      type: Boolean,
-      default: true
     }
   }
 }

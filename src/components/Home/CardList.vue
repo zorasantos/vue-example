@@ -33,6 +33,7 @@ export default {
         {
           title: 'Modals Components',
           button: 'Modals',
+          modal: true,
           tag: 'Vue Code Example',
           url: '/modal',
           link: false
@@ -46,10 +47,11 @@ export default {
           link: false
         },
         {
-          title: 'No Content',
-          button: 'No Content',
+          title: 'Chips Components',
+          button: 'Chip',
+          chip: true,
           tag: 'Vue Code Example',
-          url: '/table',
+          url: '/chip',
           link: false
         }
       ]

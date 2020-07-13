@@ -17,11 +17,18 @@
             <a v-else :href="item.url" target="_blank" class="card-title text-uppercase font-weight-medium"> {{ item.title }} </a>
           </p>
         </v-row>
-        <v-row justify="center" v-if="item.spinner" class="mt-12">
+        <div class="alert-space" v-if="item.alert"></div>
+        <div class="modal-space" v-if="item.modal"></div>
+        <v-row justify="center" v-if="item.spinner" class="mt-12 mb-12">
           <z-spinner />
           <z-spinner color="purple" />
-          <z-spinner color="green" />
+          <z-spinner class="mb-12" color="green" />
         </v-row>
+        <div v-if="item.chip">
+          <z-chip class="mb-1" color="#444444" text="Grey Chip" />
+          <z-chip class="mb-1" color="red" text="Red Chip" />
+          <z-chip class="mb-10" color="blue" text="Blue Chip" />
+        </div>
         <v-row justify="center">
           <v-btn :to="item.url" class="btn-card" rounded>
             {{ item.button }}
@@ -34,8 +41,9 @@
 
 <script>
 const Spinner = () => import('../Spinner/Spinner')
+const Chip = () => import('../Chip/Chip')
 export default {
-  components: { 'z-spinner': Spinner },
+  components: { 'z-spinner': Spinner, 'z-chip': Chip },
   data() {
     return {
       cardHovering:false
@@ -46,6 +54,13 @@ export default {
 </script>
 
 <style scoped>
+  /* Space Cards */
+  .alert-space {
+    margin-bottom: 170px;
+  }
+  .modal-space {
+    margin-bottom: 170px;
+  }
   .alert-container {
     height: 50px;
   }
@@ -66,7 +81,6 @@ export default {
     top: 0;
   }
   .btn-card {
-    margin-top: 80px;
     background-color: #39A576 !important;
     color: #FFF;
     width: 150px;
