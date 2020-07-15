@@ -82,7 +82,7 @@ export default {
   }
   .btn-card {
     background-color: #39A576 !important;
-    color: #FFF;
+    color: #FFF !important;
     width: 150px;
   }
   .card-tag {
