@@ -33,6 +33,11 @@ Vue.use(VueRouter)
     path: '/chip',
     name: 'Chip',
     component: () => import('../views/Chip.vue')
+  },
+  {
+    path: '/card',
+    name: 'Card',
+    component: () => import('../views/Card.vue')
   }
 ]
 
