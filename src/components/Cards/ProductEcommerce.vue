@@ -84,7 +84,7 @@ img {
 	grid-template-columns: 0.9fr 1fr;
 	margin: auto;
 	padding: 2.5em 0;
-	width: 650px;
+	max-width: 650px;
 	background-color: white;
 	border-radius: 5px;
 }
@@ -154,9 +154,9 @@ img {
 	}
 }
 
-.product__info {
-	padding: 0.8em 0;
-}
+// .product__info {
+// 	padding: 0.8em 0;
+// }
 
 .title {
 	h1 {
