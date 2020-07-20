@@ -21,5 +21,6 @@ export default {
 <style>
   .main {
     background-color: #ecebeb;
+    box-sizing: border-box;
   }
 </style>

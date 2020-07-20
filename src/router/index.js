@@ -38,6 +38,11 @@ Vue.use(VueRouter)
     path: '/card',
     name: 'Card',
     component: () => import('../views/Card.vue')
+  },
+  {
+    path: '/tab',
+    name: 'Tab',
+    component: () => import('../views/Tab.vue')
   }
 ]
 
