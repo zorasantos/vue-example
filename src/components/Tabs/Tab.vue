@@ -1,80 +1,71 @@
 <template>
-<div id="page">
-  <main>
-    <div id="tabs">
-      <div class="tab-links">
-        <button data-id="testOne" data-open @click="selectTab">Teste 1</button>
-        <button data-id="testTwo" @click="selectTab">Teste 2</button>
-        <button data-id="testTree" @click="selectTab">Teste 3</button>
+  <div id="page">
+    <main>
+      <div id="tabs">
+        <div class="tab-links">
+          <button data-id="testOne" data-open @click="selectTab">Teste 1</button>
+          <button data-id="testTwo" @click="selectTab">Teste 2</button>
+          <button data-id="testThree" @click="selectTab">Teste 3</button>
+        </div>
+        <div class="tab-content">
+          <section id="testOne">
+            <h2>Teste One</h2>
+          </section>
+          <section id="testTwo">
+            <h2>Teste Two</h2>
+          </section>
+          <section id="testThree">
+            <h2>Teste Three</h2>
+          </section>
+        </div>
       </div>
-      <div class="tab-content">
-        <section id="testOne">
-          <h2>Teste One</h2>
-        </section>
-        <section id="testTwo">
-          <h2>Teste Two</h2>
-        </section>
-        <section id="testTree">
-          <h2>Teste Tree</h2>
-        </section>
-      </div>
-    </div>
-  </main>
-</div>
+    </main>
+  </div>
 </template>
 
 <script>
 export default {
-methods: {
-  hideAllTabContent() {
-    const html = {
-      links: [...document.querySelector('.tab-links').children],
-      contents: [...document.querySelector('.tab-content').children]
-    }
+  methods: {
+    hideAllTabContent() {
+      const html = {
+        contents: [...document.querySelector('.tab-content').children]
+      }
+      html.contents.forEach(section => {
+        section.style.display = "none"
+      })
+    },
+    removeAllActiveClass() {
+      const html = {
+        links: [...document.querySelector('.tab-links').children],
+      }
+      html.links.forEach(tab => {
+        tab.className = tab.className.replace(" active", "")
+      })
+    },
+    showCurrentTab(id) {
+      const tabContent = document.querySelector('#' + id)
+      tabContent.style.display = "block"
+    },
+    selectTab(event) {
+      this.hideAllTabContent()
+      this.removeAllActiveClass()
+      const target = event.currentTarget
+      this.showCurrentTab(target.dataset.id)
+      target.className += " active"
 
-    html.contents.forEach(section => {
-      section.style.display = "none"
-    })
-  },
-  removeAllActiveClass() {
-    const html = {
-      links: [...document.querySelector('.tab-links').children],
-    }
-    html.links.forEach(tab => {
-      tab.className = tab.className.replace(" active", "")
-    })
-  },
-  showCurrentTab(id) {
-    const tabContent = document.querySelector('#' + id)
-    tabContent.style.display = "block"
-  },
-  selectTab(event) {
-    this.hideAllTabContent()
-    this.removeAllActiveClass()
-    const target = event.currentTarget
-    this.showCurrentTab(target.dataset.id)
-    target.className += " active"
-
-  },
-  listenForChange() {
-    const html = {
-      links: [...document.querySelector('.tab-links').children],
-      contents: [...document.querySelector('.tab-content').children]
-    }
-    html.links.forEach(tab => {
-      tab.addEventListener('click', this.selectTab )
-    })
+    },
+    listenForChange() {
+      const html = {
+        links: [...document.querySelector('.tab-links').children],
+      }
+      html.links.forEach(tab => {
+        tab.addEventListener('click', this.selectTab )
+      })
    },
 },
   mounted() {
-    // const html = {
-    //  openTab: document.querySelector('[data-open]')
-    // }
     this.hideAllTabContent()
     document.querySelector('[data-open]').click()
-    // html.openTab.click()
-
-    // this.listenForChange()
   },
 }
 </script>
@@ -82,7 +73,7 @@ methods: {
 <style scoped>
    main {
     margin: 0 auto;
-    width: 320px;
+    width: 285px;
   }
   .tab-links {
     margin-bottom: 32px;
@@ -104,7 +95,7 @@ methods: {
     height: 2px;
     widows: 0%;
 
-    background-color: red;
+    background-color: #435B71;
     transition: .4s;
   }
   button:hover::after,
